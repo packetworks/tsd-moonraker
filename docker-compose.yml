@@ -1,0 +1,12 @@
+version: "2.4"
+
+services:
+  tsd-moonraker:
+    image: packetworks/tsd-moonraker:latest
+    volumes:
+      - /root/tsd-moonraker/spaghetti-config.ini:/app/config.ini
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
